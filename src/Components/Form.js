@@ -6,6 +6,7 @@ function Form(props){
   return(
     <>
     <form className="row g-3">
+          <h1 style={{display:'flex', justifyContent:'center' }}>Form</h1>
           <div className="col-md-2">
             <label for="inputEmail4" className="form-label">Email</label>
             <input type="email" className="form-control" id="inputEmail4"

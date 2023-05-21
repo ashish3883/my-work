@@ -78,7 +78,7 @@ export default function ToDos(props) {
 
     return (
     <>
-       <h1>TO-DO LIST</h1>
+       <h1 style={{display:'flex', justifyContent:'center'}}>TO-DO LIST</h1>
        <div className="input-group mb-3 ">
             <input type="text" 
             className="form-control col-2" 
@@ -104,7 +104,7 @@ export default function ToDos(props) {
             >Add Item</button>
         </div>
         <select 
-            className="form-select" 
+            className="form-select col-sm" 
             aria-label="Default select example"
             onChange={(event) => setFilterState(event.target.value)}
             value={filterState}

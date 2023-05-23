@@ -23,7 +23,7 @@ function Form(props){
             />
           </div>
           <div className="col-md-2">
-            <label for="inputPassword4" className="form-label">Password</label>
+            <label for="inputPassword4" className="form-label">PASSWORD</label>
             <input type="password" className="form-control" id="inputPassword4"
             value={formState.userPass} 
             name='userPass' 

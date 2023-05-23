@@ -1,4 +1,9 @@
-import { Form } from "react-router-dom";
+import { Form, useLoaderData } from "react-router-dom";
+import { getContactFromId } from "../../contactsInfo";
+
+export function contactLoader({params}) {
+  return getContactFromId(params.id);
+}
 
 export default function Contact() {
   const contact = {
@@ -9,6 +14,9 @@ export default function Contact() {
     notes: "Some notes",
     favorite: true,
   };
+
+  const contactInfo = useLoaderData();
+  console.log("contactInfo", contactInfo)
 
   return (
     <div id="contact">
@@ -23,7 +31,7 @@ export default function Contact() {
         <h1>
           {contact.first || contact.last ? (
             <>
-              {contact.first} {contact.last}
+              {contactInfo.first} {contactInfo.last}
             </>
           ) : (
             <i>No Name</i>
@@ -37,7 +45,7 @@ export default function Contact() {
               target="_blank"
               href={`https://twitter.com/${contact.twitter}`}
             >
-              {contact.twitter}
+              {contactInfo.gMail}
             </a>
           </p>
         )}

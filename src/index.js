@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createBrowserRouter, RouterProvider,} from "react-router-dom";
-import Root, {loader} from './Components/Routes/root';
+import Root, {loader, rootAction} from './Components/Routes/root';
 import ErrorPage from './Components/Routes/ErrorRoute';
-import Contact from './Components/Routes/Contact';
+import Contact, { contactLoader } from './Components/Routes/Contact';
+import EditContact from './Components/Routes/EditContact';
 
 
 const router = createBrowserRouter([
@@ -15,11 +16,18 @@ const router = createBrowserRouter([
     element: <Root/>,
     errorElement: <ErrorPage/>,
     loader,
+    action: rootAction,
     children: [
       {
         path:"/contacts/:id",
-        element:<Contact/>
+        element:<Contact/>,
+        loader: contactLoader,
       },
+      {
+        path:"/contacts/:id/edit",
+        element: <EditContact/>,
+        loader: contactLoader,
+      }
     ]
   },
   
